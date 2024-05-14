@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="Member">
+    <!--  mybatis에서 설정했기 때문에 parameterType에 inhatc부터 안 적어도 됨  -->
+    <insert id="save" parameterType="member">
+        INSERT INTO member_table
+            (email, password, name, age, phone)
+        VALUES(#{email}, #{password}, #{name}, #{age}, #{phone})
+    </insert>
+    
+    <select id="login" parameterType="member" resultType="member">
+        SELECT *
+        FROM member_table
+        WHERE email = #{email} AND password = #{password}
+    </select>
+
+</mapper>
