@@ -16,4 +16,8 @@
         WHERE email = #{email} AND password = #{password}
     </select>
 
+    <select id="findAll" resultType="member">
+        SELECT * FROM member_table;
+    </select>
+
 </mapper>

@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 @RequiredArgsConstructor //생성자 불러옴
 public class MemberRepository {
@@ -22,5 +24,9 @@ public class MemberRepository {
 
     public MemberDto login(MemberDto memberDto) {
         return sqlSession.selectOne("Member.login",memberDto);
+    }
+
+    public List<MemberDto> findAll() {
+        return sqlSession.selectList("Member.findAll");
     }
 }
