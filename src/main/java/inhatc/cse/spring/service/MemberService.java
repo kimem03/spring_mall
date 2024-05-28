@@ -21,7 +21,6 @@ public class MemberService {
         MemberDto loginMember = memberRepository.login(memberDto);
         if(loginMember != null){
             return true;
-
         }else {
             return false;
         }
