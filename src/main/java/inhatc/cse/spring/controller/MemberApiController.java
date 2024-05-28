@@ -25,7 +25,7 @@ public class MemberApiController {
     }
     @PostMapping("/save")
     public ResponseEntity<?> memberInsert(@RequestBody MemberDto memberDto){
-        System.out.println("========="+ memberDto);
+        System.out.println("============="+ memberDto);
         int result = memberService.save(memberDto);
         System.out.println("============="+ result);
 
