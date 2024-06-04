@@ -30,4 +30,8 @@ public class MemberService {
     public List<MemberDto> findAll() {
         return memberRepository.findAll();
     }
+
+    public MemberDto findById(int id){
+        return memberRepository.findById(id);
+    }
 }

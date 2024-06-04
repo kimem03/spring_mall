@@ -20,4 +20,10 @@
         SELECT * FROM member_table;
     </select>
 
+    <select id="findById" parameterType="int" resultType="member" >
+        SELECT *
+        FROM member_table
+        WHERE id = #{id};
+    </select>
+
 </mapper>
